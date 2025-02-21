@@ -11,8 +11,10 @@ public class SortingTester<T extends Comparable<T>> {
     private static final int TEST_SIZE = 1000;
 
     public void testSorting(ArrayGenerator<T> generator, QuickSort<T> quickSort) {
+        System.out.println("Generando arreglo de prueba...");
         T[] array = generator.generate(ARRAY_SIZE);
 
+        System.out.println("Ejecutando pruebas de ordenamiento...");
         List<Duration> durations = new ArrayList<>(TEST_SIZE);
 
         for (int i = 0; i < TEST_SIZE; i++) {
@@ -26,6 +28,7 @@ public class SortingTester<T extends Comparable<T>> {
             durations.add(Duration.between(start, end));
         }
 
+
         double average = durations.stream()
                 .mapToLong(Duration::toMillis)
                 .average()
@@ -34,3 +37,4 @@ public class SortingTester<T extends Comparable<T>> {
         System.out.printf("\t\tTiempo promedio: %s ms\n", average);
     }
 }
+
