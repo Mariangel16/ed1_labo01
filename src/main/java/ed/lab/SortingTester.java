@@ -1,40 +1,35 @@
 package ed.lab;
 
-import java.time.Duration;
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 public class SortingTester<T extends Comparable<T>> {
     private static final int ARRAY_SIZE = 10000;
     private static final int TEST_SIZE = 1000;
 
     public void testSorting(ArrayGenerator<T> generator, QuickSort<T> quickSort) {
-        System.out.println("Generando arreglo de prueba...");
-        T[] array = generator.generate(ARRAY_SIZE);
-
         System.out.println("Ejecutando pruebas de ordenamiento...");
-        List<Duration> durations = new ArrayList<>(TEST_SIZE);
+
+        List<Long> durations = new ArrayList<>(TEST_SIZE);
 
         for (int i = 0; i < TEST_SIZE; i++) {
-            T[] copy = Arrays.copyOf(array, array.length);
+            T[] array = generator.generate(ARRAY_SIZE); // Generar nuevo array en cada iteración
+            long start = System.nanoTime();
 
-            final LocalDateTime start = LocalDateTime.now();
+            quickSort.sort(array);
 
-            quickSort.sort(copy);
-
-            final LocalDateTime end = LocalDateTime.now();
-            durations.add(Duration.between(start, end));
+            long end = System.nanoTime();
+            durations.add(end - start);
         }
 
-
         double average = durations.stream()
-                .mapToLong(Duration::toMillis)
+                .mapToLong(Long::longValue)
                 .average()
                 .orElse(0);
 
-        System.out.printf("\t\tTiempo promedio: %s ms\n", average);
+        // 🔹 Corregido: Usar %d para imprimir long en milisegundos
+        System.out.printf("\t\tTiempo promedio: %d ms\n", TimeUnit.NANOSECONDS.toMillis((long) average));
     }
 }
-

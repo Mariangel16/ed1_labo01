@@ -1,7 +1,6 @@
 package ed.lab;
 
 import org.junit.jupiter.api.Test;
-
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 class MainTest {
@@ -18,11 +17,9 @@ class MainTest {
                 .hasSize(10);
 
         for (int i = 1; i < array.length; i++) {
-            assertThat(array[i]).isNotNull();
-
             assertThat(array[i])
                     .isNotNull()
-                    .isGreaterThanOrEqualTo(array[i - 1]);
+                    .isGreaterThanOrEqualTo(array[i - 1]); // Comparación válida con Integer
         }
     }
 
@@ -38,11 +35,9 @@ class MainTest {
                 .hasSize(10);
 
         for (int i = 1; i < array.length; i++) {
-            assertThat(array[i]).isNotNull();
-
             assertThat(array[i])
                     .isNotNull()
-                    .isLessThanOrEqualTo(array[i - 1]);
+                    .isLessThanOrEqualTo(array[i - 1]); // Comparación válida con Integer
         }
     }
 
@@ -57,8 +52,8 @@ class MainTest {
                 .isNotNull()
                 .hasSize(10);
 
-        for (Integer integer : array) {
-            assertThat(integer).isNotNull();
+        for (Integer item : array) {
+            assertThat(item).isNotNull();
         }
     }
 
@@ -80,7 +75,7 @@ class MainTest {
         for (int i = 1; i < array.length; i++) {
             assertThat(array[i])
                     .isNotNull()
-                    .isGreaterThanOrEqualTo(array[i - 1]);
+                    .isGreaterThanOrEqualTo(array[i - 1]); // Comparación válida con Integer
         }
     }
 
@@ -102,7 +97,7 @@ class MainTest {
         for (int i = 1; i < array.length; i++) {
             assertThat(array[i])
                     .isNotNull()
-                    .isGreaterThanOrEqualTo(array[i - 1]);
+                    .isGreaterThanOrEqualTo(array[i - 1]); // Comparación válida con Integer
         }
     }
 
@@ -124,8 +119,7 @@ class MainTest {
         for (int i = 1; i < array.length; i++) {
             assertThat(array[i])
                     .isNotNull()
-                    .isGreaterThanOrEqualTo(array[i - 1]);
+                    .isGreaterThanOrEqualTo(array[i - 1]); // Comparación válida con Integer
         }
     }
-
 }

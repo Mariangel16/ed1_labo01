@@ -65,7 +65,7 @@ ___
 1. Diríjase a la interfaz **QuickSort**.
    1. ¿Qué tipo de interfaz es esta?
    2. ¿En qué se diferencia de **ArrayGenerator**?
-2. Cree una nueva clase llamada **SortingAlgorithms**.
+2. Cree una nueva clase llamada **ed.lab.Main.SortingAlgorithms**.
 3. Esta clase no debe heredar ni implementar ninguna interfaz.
 4. Defina los siguientes métodos en esta clase:
    1. `void highPivotQuickSort(T[] array)`: ordena un arreglo utilizando el algoritmo quick sort, seleccionando el último elemento como pivote.
@@ -79,10 +79,10 @@ ___
 
 ## Ejercicio 4
 
-1. Ahora que ha implementado las funciones en **SortingAlgorithms**, diríjase a la clase **Main**.
-2. Borre la definición de `null` que tiene asignada `highPivotQuickSort` y reemplácela por la referencia del método correspondiente en **SortingAlgorithms**.
-3. Borre la definición de `null` que tiene asignada `lowPivotQuickSort` y reemplácela por la referencia del método correspondiente en **SortingAlgorithms**.
-4. Borre la definición de `null` que tiene asignada `randomPivotQuickSort` y reemplácela por la referencia del método correspondiente en **SortingAlgorithms**.
+1. Ahora que ha implementado las funciones en **ed.lab.Main.SortingAlgorithms**, diríjase a la clase **Main**.
+2. Borre la definición de `null` que tiene asignada `highPivotQuickSort` y reemplácela por la referencia del método correspondiente en **ed.lab.Main.SortingAlgorithms**.
+3. Borre la definición de `null` que tiene asignada `lowPivotQuickSort` y reemplácela por la referencia del método correspondiente en **ed.lab.Main.SortingAlgorithms**.
+4. Borre la definición de `null` que tiene asignada `randomPivotQuickSort` y reemplácela por la referencia del método correspondiente en **ed.lab.Main.SortingAlgorithms**.
 5. Ejecute la aplicación. ¿Qué se imprime en pantalla?
 6. Si todos los arreglos son ordenados utilizando el mismo algoritmo, ¿por qué los promedios de tiempo son diferentes? ¿Cuál tuvo mejores tiempos de ejecución?
 7. Cree un nuevo `commit` y haga `push` a su repositorio remoto.
